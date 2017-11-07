@@ -1,0 +1,17 @@
+{
+  "name": "visual",
+  "dependencies": {
+    "powerbi-visuals-utils-dataviewutils": "1.2.0",
+    "vega": "^3.0.2",
+    "vega-lite": "^2.0.0-rc3"
+  },
+  "devDependencies": {
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
+  "scripts": {
+    "start": "pbiviz start",
+    "build": "pbiviz package",
+    "lint": "tslint tsconfig.json"
+  }
+}
