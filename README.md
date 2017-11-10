@@ -1,5 +1,7 @@
 # PowerBi Custom Visual in Vega-Lite
 
+![Screenshot](screenshot.png)
+
 ## Install
 
 First install necessary dependencies with `npm install`.
