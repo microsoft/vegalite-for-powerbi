@@ -1,5 +1,5 @@
 {
-    "PBI_API_VERSION": "v1.7.0",
+    "PBI_API_VERSION": "v1.8.0",
     "type": "object",
     "properties": {
         "dataRoles": {
@@ -686,9 +686,42 @@
                 "type": {
                     "description": "Describes what type of property this is and how it should be displayed to the user",
                     "$ref": "#/definitions/valueType"
+                },
+                "rule": {
+                    "type": "object",
+                    "description": "Describes substitution rule that replaces property object, described inside the rule, to current property object that contains this rule",
+                    "$ref": "#/definitions/substitutionRule"
                 }
             },
             "additionalProperties": false
+        },
+        "substitutionRule": {
+            "type": "object",
+            "description": "Describes substitution rule that replaces property object, described inside the rule, to current property object that contains this rule",
+            "properties": {
+                "inputRole": {
+                    "type": "string",
+                    "description": "The name of role. If this role is set, the substitution will be applied"
+                },
+                "output": {
+                    "type": "object",
+                    "description": "Describes what exactly is necessary to replace",
+                    "properties": {
+                        "property": {
+                            "type": "string",
+                            "description": "The name of property object that will be replaced"
+                        },
+                        "selector": {
+                            "type": "array",
+                            "description": "The array of selector names. Usually, it contains only one selector -- 'Category'",
+                            "items": {
+                                "type": "string",
+                                "description": "The name of selector"
+                            }
+                        }
+                    }
+                }
+            }
         },
         "sorting": {
             "type": "object",
@@ -815,6 +848,92 @@
                                             }
                                         }
                                     ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "fillRule" : {
+                    "type": "object",
+                    "description": "A color gradient that will be dispalyed to the user as a minimum (,medium) and maximum color pickers",
+                    "properties": {
+                        "linearGradient2": {
+                            "type": "object",
+                            "description": "Two color gradient",
+                            "properties": {
+                                "max": {
+                                    "type": "object",
+                                    "description": "Maximum color for gradient",
+                                    "properties": {
+                                        "color": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "min": {
+                                    "type": "object",
+                                    "description": "Minimum color for gradient",
+                                    "properties": {
+                                        "color": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "nullColoringStrategy": {
+                                    "type": "object",
+                                    "description": "Null color strategy"
+                                }
+                            }
+                        },
+                        "linearGradient3": {
+                            "type": "object",
+                            "description": "Three color gradient",
+                            "properties": {
+                                "max": {
+                                    "type": "object",
+                                    "description": "Maximum color for gradient",
+                                    "properties": {
+                                        "color": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "min": {
+                                    "type": "object",
+                                    "description": "Minimum color for gradient",
+                                    "properties": {
+                                        "color": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "mid": {
+                                    "type": "object",
+                                    "description": "Middle color for gradient",
+                                    "properties": {
+                                        "color": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "nullColoringStrategy": {
+                                    "type": "object",
+                                    "description": "Null color strategy"
                                 }
                             }
                         }
@@ -959,6 +1078,11 @@
                 {
                     "required": [
                         "fill"
+                    ]
+                },
+                {
+                    "required": [
+                        "fillRule"
                     ]
                 },
                 {
