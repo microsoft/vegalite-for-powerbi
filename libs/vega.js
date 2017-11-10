@@ -12744,8 +12744,7 @@ var clip$1 = function(context, scene) {
   context.clip();
 };
 
-var devicePixelRatio = typeof window !== 'undefined'
-  ? window.devicePixelRatio || 1 : 1;
+var devicePixelRatio = 2;
 
 var resize = function(canvas, width, height, origin) {
   var scale = typeof HTMLElement !== 'undefined'
