@@ -1,5 +1,7 @@
 # PowerBi Custom Visual in Vega-Lite
 
+This projects demonstrates how [Vega](vega.github.io/vega) and [Vega-Lite](vega.github.io/vega-lite) can be used in custom visuals in PowerBI. This custom visual is not intended for daily use. Think of it as a hello world for Vega and Vega-Lite in PowerBI custom visuals.
+
 ## Install
 
 `npm install`
@@ -10,7 +12,9 @@
 
 ## Update Vega
 
-`cp node_modules/vega/build/vega.js libs/vega.js` then replace the access to `window.devicePixelRatio` with a constant.
+PowerBI uses a secure iframe that disallows access to certain variables on the `window` variable. Vega reads the device pixel ratio to render visualizations on a canvas with the correct resolution. Since the variable is not available, we currenlty have to patch Vega so that it does not access it.
+
+To do so, run `cp node_modules/vega/build/vega.js libs/vega.js` then replace the access to `window.devicePixelRatio` with a constant (e.g. `2`).
 
 ## Contributing
 
