@@ -5,11 +5,11 @@
     "guid": "bar247013B6E51446149DBCA247B9C6BBBA",
     "visualClassName": "BarChart",
     "version": "1.0.0",
-    "description": "",
-    "supportUrl": "",
-    "gitHubUrl": ""
+    "description": "Sample Vega-Lite Wrapper as a PowerBi Custom Visual",
+    "supportUrl": "https://github.com/Microsoft/vegalite-for-powerbi/issues",
+    "gitHubUrl": "https://github.com/Microsoft/vegalite-for-powerbi"
   },
-  "apiVersion": "1.7.0",
+  "apiVersion": "1.8.0",
   "author": {
     "name": "Dominik Moritz",
     "email": "t-romor@microsoft.com"

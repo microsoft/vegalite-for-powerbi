@@ -1,17 +1,24 @@
 {
   "name": "visual",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vegalite-for-powerbi.git"
+  },
   "dependencies": {
     "powerbi-visuals-utils-dataviewutils": "1.2.0",
-    "vega": "^3.0.2",
-    "vega-lite": "^2.0.0-rc3"
+    "vega": "^3.0.7",
+    "vega-lite": "^2.0.1"
   },
   "devDependencies": {
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
+    "powerbi-visuals-tools": "^1.8.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
   },
   "scripts": {
     "start": "pbiviz start",
     "build": "pbiviz package",
-    "lint": "tslint tsconfig.json"
+    "lint": "tslint tsconfig.json",
+    "cert": "pbiviz --install-cert"
   }
 }
