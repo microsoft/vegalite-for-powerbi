@@ -1,12 +1,17 @@
 # PowerBi Custom Visual in Vega-Lite
 
+![Screenshot](screenshot.png)
+
 ## Install
 
-`npm install`
+First install necessary dependencies with `npm install`.
+Then run `npm run cert` and follow the instructions at https://github.com/Microsoft/PowerBI-visuals/blob/master/tools/CertificateAddOSX.md.
 
 ## Run
 
-`npm start`
+Run `npm start` in a terminal.
+
+The open PowerBI with developer mode enabled and create a developer visual.
 
 ## Update Vega
 

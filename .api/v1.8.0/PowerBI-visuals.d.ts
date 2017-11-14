@@ -81,6 +81,12 @@ declare namespace powerbi {
         /** Should be used by visuals to trace errors in PBI telemetry. */
         Error = 3,
     }
+    const enum FilterAction {
+        /** Merging filter into existing filters. */
+        merge = 0,
+        /** removing existing filter. */
+        remove = 1,
+    }
 }
 ﻿
 
@@ -1335,7 +1341,7 @@ declare module powerbi {
 }
 
 /**
- * Change Log Version 1.7.0
+ * Change Log Version 1.8.0
  */
 
 declare module powerbi.extensibility.visual {
@@ -1359,11 +1365,13 @@ declare module powerbi.extensibility.visual {
         createSelectionManager: () => ISelectionManager;
         colorPalette: IColorPalette;
         persistProperties: (changes: VisualObjectInstancesToPersist) => void;
-        applyJsonFilter: (filter: IFilter, objectName: string, propertyName: string) => void;
+        applyJsonFilter: (filter: IFilter, objectName: string, propertyName: string, action: FilterAction) => void;
         tooltipService: ITooltipService;
         telemetry: ITelemetryService;
         locale: string;
         allowInteractions: boolean;
+        instanceId: string;
+        refreshHostData: () => void;
     }
 
     export interface VisualUpdateOptions extends extensibility.VisualUpdateOptions {
