@@ -1,5 +1,10 @@
 {
   "name": "visual",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vegalite-for-powerbi.git"
+  },
   "dependencies": {
     "powerbi-visuals-utils-dataviewutils": "1.2.0",
     "vega": "^3.0.2",
