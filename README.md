@@ -2,8 +2,6 @@
 
 This projects demonstrates how [Vega](vega.github.io/vega) and [Vega-Lite](vega.github.io/vega-lite) can be used in custom visuals in PowerBI. This custom visual is not intended for daily use. Think of it as a hello world for Vega and Vega-Lite in PowerBI custom visuals.
 
-=======
-
 ![Screenshot](screenshot.png)
 
 ## Install
