@@ -97,7 +97,7 @@ module powerbi.extensibility.visual {
             };
 
             const vgSpec = vl.compile(spec).spec;
-            
+
             const runtime = vega.parse(vgSpec);
 
             this.view = new vega.View(runtime)
