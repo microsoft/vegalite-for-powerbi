@@ -15,12 +15,6 @@ Run `npm start` in a terminal.
 
 The open PowerBI with developer mode enabled and create a developer visual.
 
-## Update Vega
-
-PowerBI uses a secure iframe that disallows access to certain variables on the `window` variable. Vega reads the device pixel ratio to render visualizations on a canvas with the correct resolution. Since the variable is not available, we currenlty have to patch Vega so that it does not access it.
-
-To do so, run `cp node_modules/vega/build/vega.js libs/vega.js` then replace the access to `window.devicePixelRatio` with a constant (e.g. `2`).
-
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.

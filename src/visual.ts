@@ -40,15 +40,10 @@ module powerbi.extensibility.visual {
         private target: HTMLElement;
         private settings: VisualSettings;
 
-        private window: any;
-
         private view: any;
 
         constructor(options: VisualConstructorOptions) {
             console.log('Visual constructor', options);
-
-            // Hack for PowerBI to get access to the window
-            this.window = window;
 
             this.target = options.element;
         }
@@ -57,9 +52,6 @@ module powerbi.extensibility.visual {
         public update(options: VisualUpdateOptions) {
             this.settings = BarChart.parseSettings(options && options.dataViews && options.dataViews[0]);
             console.log('Visual update', options);
-
-            const vl = this.window.vl;
-            const vega = this.window.vega;
 
             if (this.view && (options.type & VisualUpdateType.Resize || options.type & VisualUpdateType.ResizeEnd)) {
                 this.view.width(options.viewport.width).height(options.viewport.height).run();
@@ -96,8 +88,11 @@ module powerbi.extensibility.visual {
                 }
             };
 
+            const vl = (window as any).vl;
+            const vega = (window as any).vega;
+
             const vgSpec = vl.compile(spec).spec;
-            
+
             const runtime = vega.parse(vgSpec);
 
             this.view = new vega.View(runtime)
@@ -114,7 +109,6 @@ module powerbi.extensibility.visual {
         /**
          * This function gets called for each of the objects defined in the capabilities files and allows you to select which of the
          * objects and properties you want to expose to the users in the property pane.
-         *
          */
         public enumerateObjectInstances(options: EnumerateVisualObjectInstancesOptions): VisualObjectInstance[] | VisualObjectInstanceEnumerationObject {
             return VisualSettings.enumerateObjectInstances(this.settings || VisualSettings.getDefault(), options);
