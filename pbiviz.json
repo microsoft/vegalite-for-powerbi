@@ -9,7 +9,7 @@
     "supportUrl": "https://github.com/Microsoft/vegalite-for-powerbi/issues",
     "gitHubUrl": "https://github.com/Microsoft/vegalite-for-powerbi"
   },
-  "apiVersion": "1.10.0",
+  "apiVersion": "2.6.0",
   "author": {
     "name": "Dominik Moritz",
     "email": "t-romor@microsoft.com"
@@ -17,13 +17,9 @@
   "assets": {
     "icon": "assets/icon.png"
   },
-  "externalJS": [
-    "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js",
-    "node_modules/vega-lite/build/vega-lite.js",
-    "node_modules/vega/build/vega.js"
-  ],
+  "externalJS": [],
   "style": "style/visual.less",
   "capabilities": "capabilities.json",
-  "dependencies": "dependencies.json",
+  "dependencies": null,
   "stringResources": []
 }
