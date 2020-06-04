@@ -6,14 +6,22 @@
     "url": "https://github.com/Microsoft/vegalite-for-powerbi.git"
   },
   "dependencies": {
-    "powerbi-visuals-utils-dataviewutils": "1.4.1",
-    "vega": "^3.0.8",
-    "vega-lite": "^2.0.4"
+    "@babel/runtime": "7.6.0",
+    "@babel/runtime-corejs2": "7.6.0",
+    "core-js": "3.2.1",
+    "powerbi-visuals-api": "^2.6.2",
+    "powerbi-visuals-utils-dataviewutils": "2.2.1",
+    "regenerator-runtime": "^0.13.3",
+    "vega": "^5.9.1",
+    "vega-lite": "^4.4.0"
   },
   "devDependencies": {
-    "powerbi-visuals-tools": "^1.10.0",
-    "tslint": "^5.9.1",
-    "typescript": "^2.6.2"
+    "@types/vega": "^3.2.0",
+    "powerbi-visuals-tools": "^3.1.5",
+    "ts-loader": "6.1.0",
+    "tslint": "^5.18.0",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "3.6.3"
   },
   "scripts": {
     "start": "pbiviz start",
