@@ -16,8 +16,9 @@ import DataView = powerbi.DataView;
 import * as vega from 'vega';
 import * as vl from 'vega-lite';
 import { VisualSettings } from "./settings";
+import { Dict } from "vega-lite/build/src/util";
 
-interface BarChartDataPoint {
+interface BarChartDataPoint extends Dict<unknown> {
     value: PrimitiveValue;
     category: string;
 }
@@ -51,7 +52,7 @@ function visualTransform(options: VisualUpdateOptions) {
         });
     }
 
-    return {dataPoints, categoryTitle, valueTitle};
+    return { dataPoints, categoryTitle, valueTitle };
 }
 
 export class BarChart implements IVisual {
@@ -83,7 +84,7 @@ export class BarChart implements IVisual {
             return;
         }
 
-        const {dataPoints, categoryTitle, valueTitle} = r;
+        const { dataPoints, categoryTitle, valueTitle } = r;
         const spec: vl.TopLevelSpec = {
             $schema: "https://vega.github.io/schema/vega-lite/v4.json",
             width: options.viewport.width,
@@ -98,8 +99,8 @@ export class BarChart implements IVisual {
             },
             mark: "bar",
             encoding: {
-                x: {field: "category", type: "ordinal", axis: {title: categoryTitle}},
-                y: {field: "value", type: "quantitative", axis: {title: valueTitle}}
+                x: { field: "category", type: "ordinal", axis: { title: categoryTitle } },
+                y: { field: "value", type: "quantitative", axis: { title: valueTitle } }
             }
         };
 
