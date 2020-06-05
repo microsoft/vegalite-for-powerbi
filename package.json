@@ -11,12 +11,11 @@
     "core-js": "3.2.1",
     "powerbi-visuals-api": "^2.6.2",
     "powerbi-visuals-utils-dataviewutils": "2.2.1",
-    "regenerator-runtime": "^0.13.3",
-    "vega": "^5.9.1",
-    "vega-lite": "^4.4.0"
+    "regenerator-runtime": "^0.13.5",
+    "vega": "^5.13.0",
+    "vega-lite": "^4.13.1"
   },
   "devDependencies": {
-    "@types/vega": "^3.2.0",
     "powerbi-visuals-tools": "^3.1.5",
     "ts-loader": "6.1.0",
     "tslint": "^5.18.0",
