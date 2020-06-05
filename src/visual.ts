@@ -18,7 +18,7 @@ import * as vl from 'vega-lite';
 import { VisualSettings } from "./settings";
 import { Dict } from "vega-lite/build/src/util";
 
-interface BarChartDataPoint extends Dict<unknown> {
+interface BarChartDataPoint {
     value: PrimitiveValue;
     category: string;
 }
@@ -95,7 +95,7 @@ export class BarChart implements IVisual {
                 contains: "content"
             },
             data: {
-                values: dataPoints
+                values: dataPoints as Dict<any>
             },
             mark: "bar",
             encoding: {
